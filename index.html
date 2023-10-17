@@ -191,5 +191,118 @@
    // let pic = document.createElement('img'); //создаем img
    // pic.src = tg.initDataUnsafe.user.photo_url; //задаём src 
    // usercard.appendChild(pic); //добавляем элемент в карточку 
+
+         let array_inputs = ['gypsum', 'water', 'svv500', 'pigment', 'titan', 'value']
+
+        function delete_history () {
+            if (confirm('очистить историю')) {
+                localStorage.setItem('HistoryCalc', '')
+                document.location.reload();
+            }
+        }
+        try {
+            // проброс цвета записей из локального кеша
+            load_values()
+        } catch {};
+
+        document.getElementById("value")
+            .addEventListener("keyup", function(event) {
+            event.preventDefault();
+            if (event.keyCode === 13) {
+                document.getElementById("calc").click();
+            }
+        });
+
+        function save_values(){
+            let save = {}
+
+            let Result = document.getElementById("result")
+            let ItemHistory = document.getElementById("History")
+            for (let item of array_inputs) {
+                console.log(item)
+                let val = document.getElementById(item).value
+                console.log('item ' + item + ' val ' + val );
+                save[item] = val
+            }
+            console.log(save)
+            localStorage.setItem('items', JSON.stringify(save))
+
+            let History = load_history()
+            if (Result.innerHTML + '<br><br>' != History.at(-1)) {
+                History.push(Result.innerHTML + '<br><br>')
+                console.log(History.toString())
+                // отрезаем лишнее
+                History = History.reverse().slice(0, 10)
+
+                localStorage.setItem('HistoryCalc', History.reverse().toString())
+                ItemHistory.innerHTML = '<br>'
+                for (let hist of History.reverse()){
+                    ItemHistory.innerHTML += hist
+                }
+            };
+
+        };
+
+        function load_history() {
+            let History = localStorage.getItem('HistoryCalc') || ''
+            History = History.split(",").map(String).slice(0, 10)
+            if ('' == History.at(-1)) {
+                History.pop()
+            }
+            return History
+        }
+
+        function load_values(){
+            let items = JSON.parse(localStorage.getItem('items'));
+            console.log(items)
+            for (let item in items) {
+                console.log(item + ' ' + items[item])
+                let element = document.getElementById(item)
+                element.value = items[item]
+            };
+
+            let ItemHistory = document.getElementById("History")
+            let History = load_history()
+            for (let hist of History.reverse()){
+                    ItemHistory.innerHTML += hist
+            }
+        };
+
+        function sum() {
+            let gypsum = 1000;
+            let values_water = document.getElementById('water').value;
+            let values_svv500 = document.getElementById('svv500').value;
+            let values_pigment = document.getElementById('pigment').value;
+            let values_form = document.getElementById('value').value;
+            let values_titan = document.getElementById('titan').value;
+            let result = document.getElementById("result");
+            let ratio_gypsum = Number(document.getElementById("gypsum").value.split(" ", 1)[0]);
+
+            let gypsum_value = values_form * ratio_gypsum;
+            let need_water = (values_water / gypsum) * gypsum_value;
+            let need_svv500 = (values_svv500 / gypsum) * gypsum_value;
+            let need_pigment = (values_pigment / gypsum) * gypsum_value;
+            let need_titan = (values_titan / gypsum) * gypsum_value;
+
+            result.innerHTML = 'гипс: ' + Number(gypsum_value).toFixed() + 'гр (' + gypsum_value.toFixed(2) + ')' +
+                               '<br>воды: ' + Number(need_water).toFixed() + 'гр (' + need_water.toFixed(2) + ')' +
+                               '<br>свв-500: ' + Number(need_svv500).toFixed() + 'гр (' + need_svv500.toFixed(2) + ')' +
+                               '<br>пигмент: ' + Number(need_pigment).toFixed() + 'гр (' + need_pigment.toFixed(2) + ')' +
+                               '<br>диоксид титана: ' + Number(need_titan).toFixed() + 'гр (' + need_titan.toFixed(2) + ')';
+            save_values()
+            return false;
+        };
+        function clear_value(value) {
+            let ratio_gypsum = document.getElementById(value);
+            ratio_gypsum.value = '';
+        };
+        function clear_all() {
+
+            for (let item of array_inputs) {
+                clear_value(item);
+            }
+            document.getElementById("result").innerHTML = "";
+            // localStorage.setItem('items', JSON.stringify({}))
+        }
 </script>
 </html>
