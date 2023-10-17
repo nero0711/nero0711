@@ -8,6 +8,18 @@
    <script src="https://telegram.org/js/telegram-web-app.js"></script> <!--Подключаем скрипт от телеграм-->
 
    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .indentation {
+            margin: 2px;
+        }
+
+        .history {
+            color: #b1b1b7
+        }
       body{
          color: var(--tg-theme-text-color);
          background: var(--tg-theme-bg-color);
@@ -50,6 +62,75 @@
    <p class="hint">Some little hint</p> <!--Просто текст-подсказка для проверки-->
    <button id="btn" class="button">Show/Hide Main Button</button> <!--Кнопка, чтобы скрыть / показать основную кнопку-->
    <button id="btnED" class="button">Enable/Disable Main Button</button> <!--Кнопка, чтобы сделать кнопку активной/неактивной-->
+
+
+    <div style="border:1px solid black; padding: 15px 15px 15px 15px; width: 230px;">
+        <div class="indentation">
+            <label>соотношение на 1000гр гипса: </label>
+        </div>
+        <div class="indentation">
+            <button class="button" type="submit" onclick="clear_value('gypsum');">x</button>
+            <input type="text" maxlength="150" required id="gypsum" list="datalist_gypsum" placeholder="коэффициент гипса"> коэф
+            <datalist id="datalist_gypsum">
+              <option>1.5 [г-5]</option>
+              <option>1.6 [г-16]</option>
+            </datalist>
+        </div>
+        <div class="indentation">
+            <button class="button" type="submit" onclick="clear_value('water');">x</button>
+            <input type="number" maxlength="150" required id="water" list="datalist_water" placeholder="вода"> гр
+            <datalist id="datalist_water">
+              <option>250</option>
+              <option>350</option>
+              <option>450</option>
+              <option>500</option>
+            </datalist>
+        </div>
+        <div class="indentation">
+            <button class="button" type="submit" onclick="clear_value('svv500');">x</button>
+            <input type="number" required id="svv500" list="datalist_svv500" placeholder="свв-500" /> гр
+            <datalist id="datalist_svv500">
+                <option>12</option>
+                <option>25</option>
+                <option>32</option>
+                <option>40</option>
+                <option>64</option>
+            </datalist>
+        </div>
+        <div class="indentation">
+            <button class="button" type="submit" onclick="clear_value('pigment');">x</button>
+            <input type="number" maxlength="150" required id="pigment" list="datalist_pigment" placeholder="пигмент"> гр
+            <datalist id="datalist_pigment">
+                <option>12</option>
+                <option>25</option>
+                <option>32</option>
+                <option>40</option>
+                <option>64</option>
+            </datalist>
+        </div>
+        <div class="indentation">
+            <button class="button" type="submit" onclick="clear_value('titan');">x</button>
+            <input type="number" required id="titan" list="datalist_titan" placeholder="диоксид титана"/>  гр
+            <datalist id="datalist_titan">
+                <option>32</option>
+                <option>40</option>
+                <option>64</option>
+            </datalist>
+        </div>
+        <div class="indentation">
+            <input class="spec-input" type="number" maxlength="150"  required id="value" placeholder="объем формы" style="width: 172px"> гр
+        </div>
+        <div class="indentation">
+            <button class="button" type="submit" onclick="clear_all();" ontouch="clear_all();">x</button>
+            <button class="button" type="submit" onclick="delete_history();" ontouch="delete_history();">history</button>
+            <button class="button" type="submit" onclick="sum();" ontouch="sum();" id="calc" style="width: 94px">посчитать</button>
+        </div>
+        <div class="indentation" id="result">
+        </div>
+        <div class="history" id="History">
+            <br>
+        </div>
+    </div>
 </body>
 
 <script>
@@ -107,8 +188,8 @@
 
 
    //работает только в attachment menu
-   let pic = document.createElement('img'); //создаем img
-   pic.src = tg.initDataUnsafe.user.photo_url; //задаём src 
-   usercard.appendChild(pic); //добавляем элемент в карточку 
+   // let pic = document.createElement('img'); //создаем img
+   // pic.src = tg.initDataUnsafe.user.photo_url; //задаём src 
+   // usercard.appendChild(pic); //добавляем элемент в карточку 
 </script>
 </html>
