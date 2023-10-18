@@ -52,7 +52,6 @@ calc.addEventListener("click", function(){
 	let need_water = (values_water / gypsum) * gypsum_value;
 	let need_svv500 = (values_svv500 / gypsum) * gypsum_value;
 	let need_pigment = (values_pigment / gypsum) * gypsum_value;
-	let need_titan = (values_titan / gypsum) * gypsum_value;
 
 	result = '<b>' + name + '</b><br>'
 		     'гипс: ' + Number(gypsum_value).toFixed() + 'гр (' + gypsum_value.toFixed(2) + ')' +
