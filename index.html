@@ -18,7 +18,7 @@
 <!--            <button class="btn" type="submit" onclick="clear_value('plasticizer');">Ξ</button>-->
         </div>
         <div class="indentation">
-            <button class="btn" type="submit" onclick="clear_value('gypsum');">x</button>
+            <button class="btn" type="submit" id="x_gypsum">x</button>
             <input class="input_list" type="number" maxlength="4" id="gypsum" list="datalist_gypsum" placeholder="соотношение гипса">
 
         </div>
@@ -38,8 +38,8 @@
             <input class="input_list" type="number" maxlength="5" id="value" placeholder="объем формы">
         </div>
         <div class="indentation">
-            <button class="btn" type="submit" onclick="clear_all();" ontouch="clear_all();">x</button>
-            <button class="btn2" type="submit" onclick="sum();" ontouch="sum();" id="calc" style="width: auto;">посчитать</button>
+            <button class="btn" type="submit" id="x_all">x</button>
+            <button class="btn2" type="submit" id="calc">посчитать</button>
         </div>
     </div>
 
