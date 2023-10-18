@@ -4,16 +4,16 @@ tg.expand();
 
 let result = "";
 
-let x_gypsum = document.getElementById("btn1");
-let x_water = document.getElementById("btn2");
-let x_plasticizer = document.getElementById("btn3");
-let x_pigment = document.getElementById("btn4");
-let x_all = document.getElementById("btn5");
+let x_gypsum = document.getElementById("x_gypsum");
+let x_water = document.getElementById("x_water");
+let x_plasticizer = document.getElementById("x_plasticizer");
+let x_pigment = document.getElementById("x_pigment");
+let x_all = document.getElementById("x_all");
 let calc = document.getElementById("calc");
 
 function clear_value(value) {
-	let ratio_gypsum = document.getElementById(value);
-	ratio_gypsum.value = '';
+	let item = document.getElementById(value);
+	item.value = '';
 };
 
 x_gypsum.addEventListener("click", function(){
