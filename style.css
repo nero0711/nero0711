@@ -16,52 +16,31 @@ input::-webkit-inner-spin-button {
     display: grid;
     grid-gap: 6px;
     margin: 6px 6px;
-    grid-template-columns: 50px 1fr;
-    grid-template-rows: 35px;
+    grid-template-columns: 20% 78%;
+    grid-template-rows: auto;
 }
 
 .indentation_one {
     display: grid;
-    /*grid-gap: 6px;*/
     margin: 6px 6px;
     grid-template-columns: 1fr;
     grid-template-rows: 35px;
 }
 
 .container {
-	max-width: 390px;
+	max-width: 250px;
 }
-
-/*.inner {*/
-/*	display: grid;*/
-/*	grid-template-columns: 1fr 1fr;*/
-/*	grid-template-rows: 200px 200px 200px;*/
-/*}*/
-
 
 .input_list {
     padding: 8px 20px;
     border: 2px solid black;
-	/*background: rgb(248, 168, 24);*/
 	border-radius: 10px;
-	/*color: #fff;*/
 	text-transform: uppercase;
 	font-weight: 700;
 	transition: background .2s linear;
     width: auto;
 }
 
-.input_list {
-    padding: 8px 20px;
-    border: 2px solid black;
-	/*background: rgb(248, 168, 24);*/
-	border-radius: 10px;
-	/*color: #fff;*/
-	text-transform: uppercase;
-	font-weight: 700;
-	transition: background .2s linear;
-    width: auto;
-}
 
 .input_list:hover {
 	background: lightgreen;
