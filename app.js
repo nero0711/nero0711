@@ -54,11 +54,11 @@ calc.addEventListener("click", function(){
 	let need_plasticizer = (values_plasticizer / gypsum) * gypsum_value;
 	let need_pigment = (values_pigment / gypsum) * gypsum_value;
 
-	result = name + '<br>' +
-		     'гипс: ' + Number(gypsum_value).toFixed() + 'гр (' + gypsum_value.toFixed(2) + ')<br>' +
-			 'воды: ' + Number(need_water).toFixed() + 'гр (' + need_water.toFixed(2) + ')<br>' +
-			 'пластификатор: ' + Number(need_plasticizer).toFixed() + 'гр (' + need_plasticizer.toFixed(2) + ')<br>' +
-			 'пигмент: ' + Number(need_pigment).toFixed() + 'гр (' + need_pigment.toFixed(2) + ')';
+	result = name + '\n' +
+		    'гипс: ' + Number(gypsum_value).toFixed() + 'гр (' + gypsum_value.toFixed(2) + ')\n' +
+			'воды: ' + Number(need_water).toFixed() + 'гр (' + need_water.toFixed(2) + ')\n' +
+			'пластификатор: ' + Number(need_plasticizer).toFixed() + 'гр (' + need_plasticizer.toFixed(2) + ')\n' +
+			'пигмент: ' + Number(need_pigment).toFixed() + 'гр (' + need_pigment.toFixed(2) + ')';
 	Result.innerText = result
 	// tg.sendData(result)
 });
