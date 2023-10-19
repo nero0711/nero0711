@@ -56,14 +56,14 @@ input::-webkit-inner-spin-button {
 .indentation {
     display: grid;
     grid-gap: 6px;
-    margin: 6px 6px;
+    margin: 6px 30px;
     grid-template-columns: 50px auto;
     grid-template-rows: auto;
 }
 
 .indentation_one {
     display: grid;
-    margin: 6px 6px;
+    margin: 6px 30px;
     grid-template-columns: 1fr;
     grid-template-rows: 35px;
 }
