@@ -33,7 +33,7 @@
 
         </div>
         <div class="indentation_one">
-            <input class="input_list" type="number" id="water" list="datalist_water"  placeholder="воды">
+            <input class="input_list" type="number" id="water" list="datalist_water" onchange="vis_datalist('water');"  placeholder="воды">
         </div>
         <div class="indentation_one">
             <input class="input_list" type="number" id="plasticizer" list="datalist_plasticizer" placeholder="пластификатора" />
@@ -45,7 +45,6 @@
             <input class="input_list" type="number" maxlength="5" id="value" placeholder="объем формы">
         </div>
         <div class="indentation_one">
-<!--            <button class="btn" type="submit" id="x_all">x</button>-->
             <button class="btn2" type="submit" id="calc">посчитать</button>
         </div>
     </div>
@@ -54,8 +53,8 @@
     </div>
 
     <datalist id="datalist_gypsum">
-      <option value="1.5">г-5</option>
-      <option value="1.6">г-16</option>
+        <option value="1.5">г-5</option>
+        <option value="1.6">г-16</option>
     </datalist>
 
     <datalist id="datalist_water">
@@ -73,7 +72,8 @@
         <option value="64">64гр на 1000гр гипса</option>
     </datalist>
 </body>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script> <!--Подключаем скрипт от телеграм-->
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="app.js"></script>
 
 </html>
