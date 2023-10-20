@@ -2,9 +2,9 @@ let tg = window.Telegram.WebApp;
 
 tg.expand();
 
-tg.MainButton.textColor = '#FFFFFF';
-tg.MainButton.color = '#2cab37';
-tg.MainButton.name = 'Посчитать';
+// tg.MainButton.textColor = '#FFFFFF';
+// tg.MainButton.color = '#2cab37';
+// tg.MainButton.name = 'Посчитать';
 
 tg.MainButton.show();
 
@@ -52,32 +52,7 @@ x_all.addEventListener("click", function(){
 });
 
 
-// calc.addEventListener("click", function(){
-// 	let gypsum = 1000;
-// 	let values_water = document.getElementById('water').value;
-// 	let values_plasticizer = document.getElementById('plasticizer').value;
-// 	let values_pigment = document.getElementById('pigment').value;
-// 	let values_form = document.getElementById('value').value;
-// 	let name = document.getElementById('name').value;
-// 	let ratio_gypsum = document.getElementById("gypsum").value;
-// 	let Result = document.getElementById('Result')
-//
-// 	let gypsum_value = values_form * ratio_gypsum;
-// 	let need_water = (values_water / gypsum) * gypsum_value;
-// 	let need_plasticizer = (values_plasticizer / gypsum) * gypsum_value;
-// 	let need_pigment = (values_pigment / gypsum) * gypsum_value;
-//
-// 	result = name + '\n' +
-// 		    'гипс: ' + Number(gypsum_value).toFixed() + 'гр (' + gypsum_value.toFixed(2) + ')\n' +
-// 			'воды: ' + Number(need_water).toFixed() + 'гр (' + need_water.toFixed(2) + ')\n' +
-// 			'пластификатор: ' + Number(need_plasticizer).toFixed() + 'гр (' + need_plasticizer.toFixed(2) + ')\n' +
-// 			'пигмент: ' + Number(need_pigment).toFixed() + 'гр (' + need_pigment.toFixed(2) + ')';
-// 	Result.innerText = result
-// 	// tg.sendData(result)
-// });
-
-
-Telegram.WebApp.onEvent("mainButtonClicked", function(){
+calc.addEventListener("click", function(){
 	let gypsum = 1000;
 	let values_water = document.getElementById('water').value;
 	let values_plasticizer = document.getElementById('plasticizer').value;
@@ -85,7 +60,7 @@ Telegram.WebApp.onEvent("mainButtonClicked", function(){
 	let values_form = document.getElementById('value').value;
 	let name = document.getElementById('name').value;
 	let ratio_gypsum = document.getElementById("gypsum").value;
-	let Result = document.getElementById('Result');
+	let Result = document.getElementById('Result')
 
 	let gypsum_value = values_form * ratio_gypsum;
 	let need_water = (values_water / gypsum) * gypsum_value;
@@ -97,8 +72,33 @@ Telegram.WebApp.onEvent("mainButtonClicked", function(){
 			'воды: ' + Number(need_water).toFixed() + 'гр (' + need_water.toFixed(2) + ')\n' +
 			'пластификатор: ' + Number(need_plasticizer).toFixed() + 'гр (' + need_plasticizer.toFixed(2) + ')\n' +
 			'пигмент: ' + Number(need_pigment).toFixed() + 'гр (' + need_pigment.toFixed(2) + ')';
-	Result.innerText = result;
+	Result.innerText = result
+	// tg.sendData(result)
 });
+
+
+// Telegram.WebApp.onEvent("mainButtonClicked", function(){
+// 	let gypsum = 1000;
+// 	let values_water = document.getElementById('water').value;
+// 	let values_plasticizer = document.getElementById('plasticizer').value;
+// 	let values_pigment = document.getElementById('pigment').value;
+// 	let values_form = document.getElementById('value').value;
+// 	let name = document.getElementById('name').value;
+// 	let ratio_gypsum = document.getElementById("gypsum").value;
+// 	let Result = document.getElementById('Result');
+//
+// 	let gypsum_value = values_form * ratio_gypsum;
+// 	let need_water = (values_water / gypsum) * gypsum_value;
+// 	let need_plasticizer = (values_plasticizer / gypsum) * gypsum_value;
+// 	let need_pigment = (values_pigment / gypsum) * gypsum_value;
+//
+// 	result = name + '\n' +
+// 		    'гипс: ' + Number(gypsum_value).toFixed() + 'гр (' + gypsum_value.toFixed(2) + ')\n' +
+// 			'воды: ' + Number(need_water).toFixed() + 'гр (' + need_water.toFixed(2) + ')\n' +
+// 			'пластификатор: ' + Number(need_plasticizer).toFixed() + 'гр (' + need_plasticizer.toFixed(2) + ')\n' +
+// 			'пигмент: ' + Number(need_pigment).toFixed() + 'гр (' + need_pigment.toFixed(2) + ')';
+// 	Result.innerText = result;
+// });
 
 // function addActive(x) {
 //     if (!x) return false;
