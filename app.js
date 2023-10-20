@@ -11,10 +11,16 @@ let x_pigment = document.getElementById("x_pigment");
 let x_all = document.getElementById("x_all");
 let calc = document.getElementById("calc");
 
+let input_gypsum = document.getElementById('gypsum')
+
 function clear_value(value) {
 	let item = document.getElementById(value);
 	item.value = '';
 };
+
+input_gypsum.addEventListener("click", function (){
+	clear_value('gypsum')
+});
 
 x_gypsum.addEventListener("click", function(){
 	clear_value('gypsum')
