@@ -5,19 +5,12 @@ body {
 	color: var(--tg-theme-text-color);
 	background: var(--tg-theme-bg-color);
 }
-
-
-.container {
-    display: grid;
-    width: 100%;
-    /*max-width: 480px;*/
-    /*flex-wrap: wrap;*/
-    margin: 0 auto;
-    /*justify-content: space-around;*/
-    /*align-content: flex-end;*/
-    /*transition: max-height var(--page-animation), opacity var(--page-animation);*/
-    /*background-color: var(--block-bg-color);*/
+body.order-mode {
+  background-color: var(--bg-color);
 }
+
+
+
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -26,39 +19,59 @@ input::-webkit-inner-spin-button {
 }
 
 .indentation {
-    /*max-width: 684px;*/
-
     display: grid;
     grid-gap: 6px;
-    margin: 6px 30px;
-    grid-template-columns: 50px auto;
-    grid-template-rows: auto;
+    margin: 6px 6px;
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: 35px;
 }
 
 .indentation_one {
-    max-width: 684px;
     display: grid;
-    grid-gap: 6px;
-    margin: 6px 30px;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
+    /*grid-gap: 6px;*/
+    margin: 6px 6px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 35px;
+}
+
+.container {
+	max-width: 100%;
+}
+
+/*.inner {*/
+/*	display: grid;*/
+/*	grid-template-columns: 1fr 1fr;*/
+/*	grid-template-rows: 200px 200px 200px;*/
+/*}*/
+
+
+.input_list {
+    padding: 8px 20px;
+    border: 2px solid black;
+	/*background: rgb(248, 168, 24);*/
+	border-radius: 10px;
+	/*color: #fff;*/
+	text-transform: uppercase;
+	font-weight: 700;
+	transition: background .2s linear;
+    width: auto;
 }
 
 .input_list {
     padding: 8px 20px;
     border: 2px solid black;
+	/*background: rgb(248, 168, 24);*/
 	border-radius: 10px;
+	/*color: #fff;*/
 	text-transform: uppercase;
-	/*font-weight: 700;*/
+	font-weight: 700;
 	transition: background .2s linear;
     width: auto;
 }
 
-
 .input_list:hover {
 	background: lightgreen;
 }
-
 
 .btn {
 	/*display: inline-block;*/
@@ -90,21 +103,7 @@ input::-webkit-inner-spin-button {
 	background: rgb(101, 206, 31);
 }
 
+
 .usercard {
 	text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
