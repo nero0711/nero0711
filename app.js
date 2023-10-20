@@ -4,6 +4,7 @@ tg.expand();
 
 tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
+tg.MainButton.name = 'Посчитать';
 
 tg.MainButton.show();
 
@@ -84,7 +85,7 @@ Telegram.WebApp.onEvent("mainButtonClicked", function(){
 	let values_form = document.getElementById('value').value;
 	let name = document.getElementById('name').value;
 	let ratio_gypsum = document.getElementById("gypsum").value;
-	let Result = document.getElementById('Result')
+	let Result = document.getElementById('Result');
 
 	let gypsum_value = values_form * ratio_gypsum;
 	let need_water = (values_water / gypsum) * gypsum_value;
@@ -96,7 +97,7 @@ Telegram.WebApp.onEvent("mainButtonClicked", function(){
 			'воды: ' + Number(need_water).toFixed() + 'гр (' + need_water.toFixed(2) + ')\n' +
 			'пластификатор: ' + Number(need_plasticizer).toFixed() + 'гр (' + need_plasticizer.toFixed(2) + ')\n' +
 			'пигмент: ' + Number(need_pigment).toFixed() + 'гр (' + need_pigment.toFixed(2) + ')';
-	Result.innerText = result
+	Result.innerText = result;
 });
 
 // function addActive(x) {
