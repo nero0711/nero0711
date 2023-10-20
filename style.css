@@ -71,8 +71,9 @@ input::-webkit-inner-spin-button {
 .indentation_one {
     max-width: 684px;
     display: grid;
-    margin: 0 auto;
-    grid-template-columns: 1fr;
+    grid-gap: 6px;
+    margin: 6px 30px;
+    grid-template-columns: auto;
     grid-template-rows: auto;
 }
 
