@@ -14,7 +14,7 @@ let x_gypsum = document.getElementById("x_gypsum");
 let x_water = document.getElementById("x_water");
 let x_plasticizer = document.getElementById("x_plasticizer");
 let x_pigment = document.getElementById("x_pigment");
-let x_all = document.getElementById("x_all");
+// let x_all = document.getElementById("x_all");
 let calc = document.getElementById("calc");
 
 let input_gypsum = document.getElementById('gypsum')
@@ -43,12 +43,12 @@ input_gypsum.addEventListener("click", function (){
 	clear_value('gypsum')
 });
 
-x_all.addEventListener("click", function(){
-	let array_inputs = ['name', 'gypsum', 'water', 'plasticizer', 'pigment', 'value']
-	for (let item of array_inputs) {
-		clear_value(item);
-	}
-});
+// x_all.addEventListener("click", function(){
+// 	let array_inputs = ['name', 'gypsum', 'water', 'plasticizer', 'pigment', 'value']
+// 	for (let item of array_inputs) {
+// 		clear_value(item);
+// 	}
+// });
 
 
 calc.addEventListener("click", function(){
