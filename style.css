@@ -42,9 +42,16 @@ body.order-mode {
 }
 
 
-/*.container {*/
-/*	max-width: 260px;*/
-/*}*/
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 480px;
+    justify-content: space-around;
+    align-content: flex-end;
+    transition: max-height var(--page-animation), opacity var(--page-animation);
+    background-color: var(--block-bg-color);
+}
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
