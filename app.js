@@ -5,8 +5,7 @@ tg.expand();
 // tg.MainButton.textColor = '#FFFFFF';
 // tg.MainButton.color = '#2cab37';
 // tg.MainButton.name = 'Посчитать';
-
-tg.MainButton.show();
+// tg.MainButton.show();
 
 
 let result = "";
