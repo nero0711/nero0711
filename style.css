@@ -54,6 +54,7 @@ input::-webkit-inner-spin-button {
 }
 
 .indentation {
+    max-width: 684px;
     display: grid;
     grid-gap: 6px;
     margin: 6px 30px;
@@ -61,7 +62,81 @@ input::-webkit-inner-spin-button {
     grid-template-rows: auto;
 }
 
+.input-field {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: 0;
+    line-height: normal;
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    width: 100%;
+    border: none;
+    background: 0 0;
+    padding: 0;
+    box-shadow:none
+}
+
+.input-field::-webkit-input-placeholder {
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition:all .3s ease
+}
+
+.input-field::-moz-placeholder {
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition:all .3s ease
+}
+
+.input-field:-moz-placeholder {
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition:all .3s ease
+}
+
+.input-field:-ms-input-placeholder {
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition:all .3s ease
+}
+
+.input-field-textarea {
+    resize:vertical
+}
+
+.input-field:focus {
+    outline:0
+}
+
+.input-field:focus::-webkit-input-placeholder {
+    opacity:0
+}
+
+.input-field:focus::-moz-placeholder {
+    opacity:0
+}
+
+.input-field:focus:-moz-placeholder {
+    opacity:0
+}
+
+.input-field:focus:-ms-input-placeholder {
+    opacity:0
+}
+
+
 .indentation_one {
+    max-width: 684px;
     display: grid;
     margin: 6px 30px;
     grid-template-columns: 1fr;
