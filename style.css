@@ -43,7 +43,7 @@ html.dark body {
 }
 
 .container {
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
     margin: 0 auto;
     max-width: 480px;
