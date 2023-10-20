@@ -1,8 +1,12 @@
 body {
   font-family: var(--default-font);
-  font-size: 13px;
-  line-height: 16px;
-  font-weight: 400;
+    background: 0 0;
+    overflow-x: hidden;
+    font-family: AvenirNextCyr, Arial, sans-serif;
+    color: #3f4145;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight:400;
   background-color: var(--block-bg-color);
   color: var(--text-color);
   color-scheme: var(--tg-color-scheme);
@@ -64,8 +68,8 @@ input::-webkit-inner-spin-button {
     display: grid;
     grid-gap: 6px;
     margin: 6px 30px;
-    grid-template-columns: 50px auto;
-    grid-template-rows: auto;
+    /*grid-template-columns: 50px auto;*/
+    /*grid-template-rows: auto;*/
 }
 
 .input-field {
@@ -145,8 +149,8 @@ input::-webkit-inner-spin-button {
     max-width: 684px;
     display: grid;
     margin: 0 auto;
-    grid-template-columns: 1fr;
-    grid-template-rows: 35px;
+    /*grid-template-columns: 1fr;*/
+    /*grid-template-rows: 35px;*/
 }
 
 
@@ -156,7 +160,7 @@ input::-webkit-inner-spin-button {
     border: 2px solid black;
 	border-radius: 10px;
 	text-transform: uppercase;
-	font-weight: 700;
+	/*font-weight: 700;*/
 	transition: background .2s linear;
     width: auto;
 }
