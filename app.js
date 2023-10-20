@@ -72,7 +72,6 @@ calc.addEventListener("click", function(){
 			'пластификатор: ' + Number(need_plasticizer).toFixed() + 'гр (' + need_plasticizer.toFixed(2) + ')\n' +
 			'пигмент: ' + Number(need_pigment).toFixed() + 'гр (' + need_pigment.toFixed(2) + ')';
 	Result.innerText = result
-	// tg.sendData(result)
 });
 
 
@@ -98,20 +97,6 @@ calc.addEventListener("click", function(){
 // 			'пигмент: ' + Number(need_pigment).toFixed() + 'гр (' + need_pigment.toFixed(2) + ')';
 // 	Result.innerText = result;
 // });
-
-// function addActive(x) {
-//     if (!x) return false;
-//     removeActive(x);
-//     if (currentFocus >= x.length) currentFocus = 0;
-//     if (currentFocus < 0) currentFocus = (x.length - 1);
-//     x[currentFocus].classList.add("active");
-//   }
-//   function removeActive(x) {
-//     for (var i = 0; i < x.length; i++) {
-//       x[i].classList.remove("active");
-//     }
-//   }
-
 
 
 
