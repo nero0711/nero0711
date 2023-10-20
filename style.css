@@ -9,7 +9,8 @@ body {
 
 .container {
     display: grid;
-    max-width: 390px;
+    width: 100%;
+    max-width: 480px;
     /*flex-wrap: wrap;*/
     margin: 0 auto;
     /*justify-content: space-around;*/
