@@ -33,17 +33,31 @@ input_gypsum.addEventListener("click", function (){
 });
 
 input_water.addEventListener("click", function (){
-	clear_value('water')
+	clear_value('water');
+	input_water.list.show();
 });
 
 input_plasticizer.addEventListener("click", function (){
-	clear_value('plasticizer')
+	clear_value('plasticizer');
 });
 
 input_pigment.addEventListener("click", function (){
-	clear_value('pigment')
+	clear_value('pigment');
 });
 
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
 
 calc.addEventListener("click", function(){
 	let gypsum = 1000;
