@@ -17,23 +17,30 @@ let input_plasticizer = document.getElementById('plasticizer')
 let input_pigment = document.getElementById('pigment')
 
 
+// input_gypsum.selectedIndex = 2;
 
 function clear_value(value) {
 	let item = document.getElementById(value);
 	item.value = '';
 };
 
-input_gypsum.selectedIndex = 1;
+function toggleField(hideObj, showObj){
+  hideObj.disabled=true;
+  hideObj.style.display='none';
+  showObj.disabled=false;
+  showObj.style.display='inline';
+  showObj.focus();
+}
 
 
 calc.addEventListener("click", function(){
 	let gypsum = 1000;
-	let values_water = document.getElementById('water').value;
-	let values_plasticizer = document.getElementById('plasticizer').value;
-	let values_pigment = document.getElementById('pigment').value;
+	let values_water = document.getElementById('water1').value || document.getElementById('water2').value;
+	let values_plasticizer = document.getElementById('plasticizer1').value || document.getElementById('plasticizer2').value;
+	let values_pigment = document.getElementById('pigment1').value || document.getElementById('pigment2').value;
 	let values_form = document.getElementById('value').value;
 	let name = document.getElementById('name').value;
-	let ratio_gypsum = document.getElementById("gypsum").value;
+	let ratio_gypsum = document.getElementById("gypsum1").value || document.getElementById("gypsum2").value
 	let Result = document.getElementById('Result')
 
 	let gypsum_value = values_form * ratio_gypsum;
@@ -47,6 +54,7 @@ calc.addEventListener("click", function(){
 			'пластификатор: ' + Number(need_plasticizer).toFixed() + 'гр (' + need_plasticizer.toFixed(2) + ')\n' +
 			'пигмент: ' + Number(need_pigment).toFixed() + 'гр (' + need_pigment.toFixed(2) + ')';
 	Result.innerText = result
+	tg.sendData(result)
 });
 
 

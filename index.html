@@ -11,12 +11,6 @@
     <meta name="robots" content="noindex, nofollow">
     <title>Calc</title>
 
-
-    <link rel="stylesheet" href="flexselect.css" type="text/css" media="screen" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
-    <script src="liquidmetal.js" type="text/javascript"></script>
-    <script src="jquery.flexselect.js" type="text/javascript"></script>
-
     <script src="https://tg.dev/js/telegram-web-app.js?37"></script>
     <script>
       function setThemeClass() {
@@ -31,47 +25,52 @@
 <body>
 
     <div class="container">
-        <div class="indentation_one" >
+        <div class="indentation" >
             <input class="input_list" type="text" maxlength="150" id="name" placeholder="название рецепта">
-<!--            <button class="btn" type="submit">Ξ</button>-->
+            <button class="btn" type="submit">Ξ</button>
         </div>
         <div class="indentation_one">
-            <select class="input_list flexselect"  type="number" autocomplete="off" id="gypsum" placeholder="соотношение гипса" value="" style="visibility: visible;">
-                <option value="1.5">г-5</option>
-                <option value="1.6">г-16</option>
-            </select>
+
+                <select class="input_list" name="gypsum" id="gypsum1" onchange="if(this.options[this.selectedIndex].value=='customOption'){toggleField(this,this.nextSibling); this.selectedIndex='0';}">
+                    <option>соотношение гипса (коэффициент)</option>
+                    <option value="customOption">[ввести значение]</option>
+                    <option value="1.5">г-5 (1.5)</option>
+                    <option value="1.6">г-16 (1.6)</option>
+                </select><input class="input_list" name="gypsum" id="gypsum2" style="display:none;" disabled="disabled" onblur="if(this.value==''){toggleField(this,this.previousSibling);}">
         </div>
         <div class="indentation_one">
-            <select class="input_list flexselect" autocomplete="off" type="number" id="water"  placeholder="воды" style="visibility: visible;">
-                    <option hidden disabled selected value> воды </option>
-                    <option value="250">250гр на 1000гр гипса</option>
-                    <option value="350">350гр на 1000гр гипса</option>
-                    <option value="450">450гр на 1000гр гипса</option>
-                    <option value="500">500гр на 1000гр гипса</option>
-            </select>
+            <select class="input_list" name="water" id="water1" onchange="if(this.options[this.selectedIndex].value=='customOption'){toggleField(this,this.nextSibling); this.selectedIndex='0';}">
+                <option hidden disabled selected value>воды</option>
+                <option value="customOption">[ввести значение]</option>
+                <option value="250">250гр на 1000гр гипса</option>
+                <option value="350">350гр на 1000гр гипса</option>
+                <option value="450">450гр на 1000гр гипса</option>
+                <option value="500">500гр на 1000гр гипса</option>
+            </select><input class="input_list" name="water" id="water2" style="display:none;" disabled="disabled" onblur="if(this.value==''){toggleField(this,this.previousSibling);}">
         </div>
         <div class="indentation_one">
-            <select class="input_list flexselect" autocomplete="off" type="number" id="plasticizer" value="dfsf"  placeholder="пластификатора" style="visibility: visible;">
-                <option hidden disabled selected value> пластификатора </option>
+            <select class="input_list" name="plasticizer" id="plasticizer1" onchange="if(this.options[this.selectedIndex].value=='customOption'){toggleField(this,this.nextSibling); this.selectedIndex='0';}">
+                <option hidden disabled selected value>пластификатора</option>
+                <option value="customOption">[ввести значение]</option>
                 <option value="0">0гр на 1000гр гипса</option>
                 <option value="12">12гр на 1000гр гипса</option>
                 <option value="25">25гр на 1000гр гипса</option>
                 <option value="32">32гр на 1000гр гипса</option>
                 <option value="40">40гр на 1000гр гипса</option>
                 <option value="64">64гр на 1000гр гипса</option>
-            </select>
+            </select><input class="input_list" name="plasticizer" id="plasticizer2" style="display:none;" disabled="disabled" onblur="if(this.value==''){toggleField(this,this.previousSibling);}">
         </div>
         <div class="indentation_one">
-            <select class="input_list flexselect" autocomplete="off" type="number" id="pigment"  placeholder="пигмент" style="visibility: visible;">
-                    <option hidden disabled selected value> пигмента </option>
-                    <option value="0">0гр на 1000гр гипса</option>
-                    <option value="12">12гр на 1000гр гипса</option>
-                    <option value="25">25гр на 1000гр гипса</option>
-                    <option value="32">32гр на 1000гр гипса</option>
-                    <option value="40">40гр на 1000гр гипса</option>
-                    <option value="64">64гр на 1000гр гипса</option>
-            </select>
-
+            <select class="input_list" name="pigment" id="pigment1" onchange="if(this.options[this.selectedIndex].value=='customOption'){toggleField(this,this.nextSibling); this.selectedIndex='0';}">
+                <option hidden disabled selected value>пластификатора</option>
+                <option value="customOption">[ввести значение]</option>
+                <option value="0">0гр на 1000гр гипса</option>
+                <option value="12">12гр на 1000гр гипса</option>
+                <option value="25">25гр на 1000гр гипса</option>
+                <option value="32">32гр на 1000гр гипса</option>
+                <option value="40">40гр на 1000гр гипса</option>
+                <option value="64">64гр на 1000гр гипса</option>
+            </select><input class="input_list" name="pigment" id="pigment2" style="display:none;" disabled="disabled" onblur="if(this.value==''){toggleField(this,this.previousSibling);}">
         </div>
         <div class="indentation_one">
             <input class="input_list" type="number" maxlength="5" id="value" placeholder="объем формы">
@@ -83,6 +82,7 @@
     <div id="Result" style="margin: 30px 30px;">
 
     </div>
+
 </body>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
