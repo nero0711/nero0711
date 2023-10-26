@@ -28,27 +28,21 @@ function clear_value(value) {
 };
 
 input_gypsum.addEventListener("click", function (){
-	clear_value('gypsum')
+	clear_value('gypsum');
+	input_gypsum.classList.toggle('show');
 });
 
-input_gypsum.addEventListener("click", function (){
-	clear_value('gypsum')
+input_water.addEventListener("click", function (){
+	clear_value('water')
 });
 
-input_gypsum.addEventListener("click", function (){
-	clear_value('gypsum')
+input_plasticizer.addEventListener("click", function (){
+	clear_value('plasticizer')
 });
 
-input_gypsum.addEventListener("click", function (){
-	clear_value('gypsum')
+input_pigment.addEventListener("click", function (){
+	clear_value('pigment')
 });
-
-// x_all.addEventListener("click", function(){
-// 	let array_inputs = ['name', 'gypsum', 'water', 'plasticizer', 'pigment', 'value']
-// 	for (let item of array_inputs) {
-// 		clear_value(item);
-// 	}
-// });
 
 
 calc.addEventListener("click", function(){
