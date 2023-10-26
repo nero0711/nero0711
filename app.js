@@ -23,7 +23,7 @@ function clear_value(value) {
 	item.value = '';
 };
 
-input_gypsum.selectedIndex = 2;
+input_gypsum.selectedIndex = 1;
 
 
 calc.addEventListener("click", function(){
