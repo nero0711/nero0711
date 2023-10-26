@@ -2,12 +2,6 @@ let tg = window.Telegram.WebApp;
 
 tg.expand();
 
-// tg.MainButton.textColor = '#FFFFFF';
-// tg.MainButton.color = '#2cab37';
-// tg.MainButton.name = 'Посчитать';
-// tg.MainButton.show();
-
-
 let result = "";
 
 let x_gypsum = document.getElementById("x_gypsum");
@@ -22,42 +16,15 @@ let input_water = document.getElementById('water')
 let input_plasticizer = document.getElementById('plasticizer')
 let input_pigment = document.getElementById('pigment')
 
+
+
 function clear_value(value) {
 	let item = document.getElementById(value);
 	item.value = '';
 };
 
-input_gypsum.addEventListener("click", function (){
-	clear_value('gypsum');
-	input_gypsum.classList.toggle('show');
-});
+input_gypsum.selectedIndex = 2;
 
-input_water.addEventListener("click", function (){
-	clear_value('water');
-	input_water.list.show();
-});
-
-input_plasticizer.addEventListener("click", function (){
-	clear_value('plasticizer');
-});
-
-input_pigment.addEventListener("click", function (){
-	clear_value('pigment');
-});
-
-
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
 
 calc.addEventListener("click", function(){
 	let gypsum = 1000;
