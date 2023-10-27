@@ -86,7 +86,7 @@ calc.addEventListener("click", function(){
 			'пластификатор: ' + Number(need_plasticizer).toFixed() + 'гр (' + need_plasticizer.toFixed(2) + ')\n' +
 			'пигмент: ' + Number(need_pigment).toFixed() + 'гр (' + need_pigment.toFixed(2) + ')';
 	Result.innerText = result
-	Result.setAttribute('style', 'color:black; margin: 30px 30px;');
+	Result.setAttribute('style', 'color: var(--tg-theme-text-color); margin: 30px 30px;');
 	tg.sendData(result)
 });
 
