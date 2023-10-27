@@ -55,33 +55,6 @@ input::-webkit-inner-spin-button {
   -webkit-box-shadow: 0 6px 12px #ccc;
 }
 
-.flexselect_dropdown ul {
-	width: 100%;
-	list-style-position: outside;
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-
-.flexselect_dropdown li {
-	margin: 0px;
-	padding: 2px 5px;
-	cursor: pointer;
-	display: block;
-	width: 100%;
-	font: Menu;
-	overflow: hidden;
-}
-
-.flexselect_dropdown li.disabled {
-  cursor: not-allowed;
-  color: GrayText;
-}
-
-.flexselect_selected {
-	background-color: Highlight;
-	color: HighlightText;
-}
 
 /*.inner {*/
 /*	display: grid;*/
@@ -112,6 +85,10 @@ input::-webkit-inner-spin-button {
 	font-weight: 700;
 	transition: background .2s linear;
     width: auto;
+}
+
+.Important {
+    border: 2px solid red;
 }
 
 .input_list:hover {

@@ -11,13 +11,13 @@ let x_pigment = document.getElementById("x_pigment");
 // let x_all = document.getElementById("x_all");
 let calc = document.getElementById("calc");
 
-let input_gypsum = document.getElementById('gypsum')
-let input_water = document.getElementById('water')
-let input_plasticizer = document.getElementById('plasticizer')
-let input_pigment = document.getElementById('pigment')
+let input_gypsum = document.getElementById('gypsum1')
+let input_water = document.getElementById('water1')
+let input_plasticizer = document.getElementById('plasticizer1')
+let input_pigment = document.getElementById('pigment1')
 
 
-// input_gypsum.selectedIndex = 2;
+input_gypsum.selectedIndex = 3;
 
 function clear_value(value) {
 	let item = document.getElementById(value);
@@ -33,6 +33,30 @@ function toggleField(hideObj, showObj){
 }
 
 
+function isNumber(value) {
+  return typeof value === 'number' && isFinite(value);
+}
+
+
+function check_item(item){
+	if (!isFinite(item.value) || Number(item.value) <= 0 )  {
+		item.classList.add('Important')
+		return false
+	}
+	item.classList.remove('Important')
+	return true
+};
+
+function give_my_item(array_names){
+	for (var i = 0; i < array_names.length; i++){
+		let val = document.getElementById(array_names[i]);
+		if (!val.disabled) {
+			return val
+		};
+	};
+};
+
+
 calc.addEventListener("click", function(){
 	let gypsum = 1000;
 	let values_water = document.getElementById('water1').value || document.getElementById('water2').value;
@@ -42,6 +66,14 @@ calc.addEventListener("click", function(){
 	let name = document.getElementById('name').value;
 	let ratio_gypsum = document.getElementById("gypsum1").value || document.getElementById("gypsum2").value
 	let Result = document.getElementById('Result')
+
+	let checks = [check_item(give_my_item(["gypsum1", "gypsum2"])), check_item(give_my_item(["water1", "water2"])), check_item(give_my_item(["value"]))]
+	// console.log()
+	if ( !checks.every(element => element)) {
+		Result.innerText = 'Не заполнены обязательные поля!'
+		Result.setAttribute('style', 'color:red; margin: 30px 30px;');
+		return
+	};
 
 	let gypsum_value = values_form * ratio_gypsum;
 	let need_water = (values_water / gypsum) * gypsum_value;
@@ -54,6 +86,7 @@ calc.addEventListener("click", function(){
 			'пластификатор: ' + Number(need_plasticizer).toFixed() + 'гр (' + need_plasticizer.toFixed(2) + ')\n' +
 			'пигмент: ' + Number(need_pigment).toFixed() + 'гр (' + need_pigment.toFixed(2) + ')';
 	Result.innerText = result
+	Result.setAttribute('style', 'color:black; margin: 30px 30px;');
 	tg.sendData(result)
 });
 
