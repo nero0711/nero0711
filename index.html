@@ -46,7 +46,7 @@
                 <option value="350">350гр на 1000гр гипса</option>
                 <option value="450">450гр на 1000гр гипса</option>
                 <option value="500">500гр на 1000гр гипса</option>
-            </select><input class="input_list" name="water" type="number"  id="water2" style="display:none;" disabled="disabled" onblur="if(this.value==''){toggleField(this,this.previousSibling);}">
+            </select><input class="input_list" name="water" type="number"  id="water2" style="display:none;" disabled="disabled" > <!--onblur="if(this.value==''){toggleField(this,this.previousSibling);}"-->
         </div>
         <div class="indentation_one">
             <select class="input_list" name="plasticizer" id="plasticizer1" onchange="if(this.options[this.selectedIndex].value=='customOption'){toggleField(this,this.nextSibling); this.selectedIndex='0';}">
@@ -58,7 +58,7 @@
                 <option value="32">32гр на 1000гр гипса</option>
                 <option value="40">40гр на 1000гр гипса</option>
                 <option value="64">64гр на 1000гр гипса</option>
-            </select><input class="input_list" type="number" name="plasticizer" id="plasticizer2" style="display:none;" disabled="disabled" onblur="if(this.value==''){toggleField(this,this.previousSibling);}">
+            </select><input class="input_list" type="number" name="plasticizer" id="plasticizer2" style="display:none;" disabled="disabled" > <!--onblur="if(this.value==''){toggleField(this,this.previousSibling);}"-->
         </div>
         <div class="indentation_one">
             <select class="input_list" name="pigment" id="pigment1" onchange="if(this.options[this.selectedIndex].value=='customOption'){toggleField(this,this.nextSibling); this.selectedIndex='0';}">
@@ -70,7 +70,7 @@
                 <option value="32">32гр на 1000гр гипса</option>
                 <option value="40">40гр на 1000гр гипса</option>
                 <option value="64">64гр на 1000гр гипса</option>
-            </select><input class="input_list" type="number"  name="pigment" id="pigment2" style="display:none;" disabled="disabled" onblur="if(this.value==''){toggleField(this,this.previousSibling);}">
+            </select><input class="input_list" type="number"  name="pigment" id="pigment2" style="display:none;" disabled="disabled" onblur="if(this.value==''){toggleField(this,this.previousSibling);}">  <!--onblur="if(this.value==''){toggleField(this,this.previousSibling);}"-->
         </div>
         <div class="indentation_one">
             <input class="input_list" type="number" maxlength="5" id="value" placeholder="объем формы">
