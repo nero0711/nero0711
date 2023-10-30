@@ -76,9 +76,16 @@ calc.addEventListener("click", function(){
 
 	result = name + '\n' +
 		    'гипс: ' + Number(gypsum_value).toFixed() + 'гр (' + gypsum_value.toFixed(2) + ')\n' +
-			'воды: ' + Number(need_water).toFixed() + 'гр (' + need_water.toFixed(2) + ')\n' +
-			'пластификатор: ' + Number(need_plasticizer).toFixed() + 'гр (' + need_plasticizer.toFixed(2) + ')\n' +
-			'пигмент: ' + Number(need_pigment).toFixed() + 'гр (' + need_pigment.toFixed(2) + ')';
+			'воды: ' + Number(need_water).toFixed() + 'гр (' + need_water.toFixed(2) + ')\n';
+
+	if (need_plasticizer > 0 ) {
+		result += 'пластификатор: ' + Number(need_plasticizer).toFixed() + 'гр (' + need_plasticizer.toFixed(2) + ')\n'
+	}
+
+	if (need_pigment > 0 ) {
+		result += 'пигмент: ' + Number(need_pigment).toFixed() + 'гр (' + need_pigment.toFixed(2) + ')\n';
+	}
+
 	Result.innerText = result
 	Result.setAttribute('style', 'color: var(--tg-theme-text-color); margin: 30px 30px;');
 	tg.sendData(result)
