@@ -11,12 +11,13 @@ let input_gypsum = document.getElementById('gypsum1')
 input_gypsum.selectedIndex = 3;
 
 function toggleField(hideObj, showObj){
-	showObj.focus();
-  showObj.disabled=false;
-  showObj.style.display='inline';
-
   hideObj.disabled=true;
   hideObj.style.display='none';
+  showObj.disabled=false;
+  showObj.style.display='inline';
+  showObj.focus();
+  setTimeout(500);
+  showObj.focus();
 }
 
 function check_item(item){
