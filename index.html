@@ -36,7 +36,7 @@
                     <option value="customOption">[ввести значение]</option>
                     <option value="1.5">г-5 (1.5)</option>
                     <option value="1.6">г-16 (1.6)</option>
-                </select><input class="input_list" name="gypsum" type="number" step="0.1" id="gypsum2" style="display:none;" disabled="disabled" onblur="if(this.value==''){toggleField(this,this.previousSibling);}">
+                </select><input class="input_list" name="gypsum" type="number" step="0.1" id="gypsum2" style="display:none;" disabled="disabled"> <!--onblur="if(this.value==''){toggleField(this,this.previousSibling);}"-->
         </div>
         <div class="indentation_one">
             <select class="input_list" name="water" id="water1" onchange="if(this.options[this.selectedIndex].value=='customOption'){toggleField(this,this.nextSibling); this.selectedIndex='0';}">
