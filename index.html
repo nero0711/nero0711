@@ -49,7 +49,7 @@
             </select><input class="input_list" name="water" type="number"  id="water2" style="display:none;" disabled > <!--onblur="if(this.value==''){toggleField(this,this.previousSibling);}"-->
         </div>
         <div class="indentation_one">
-            <select class="input_list" name="plasticizer" id="plasticizer1" onchange="if(this.options[this.selectedIndex].value=='customOption'){toggleField(this,this.nextSibling); this.selectedIndex='0';}">
+            <select class="input_list" name="plasticizer" id="plasticizer1" onchange="if(this.options[this.selectedIndex].value=='customOption'){this.selectedIndex='0'; toggleField(this,this.nextSibling); }">
                 <option hidden disabled selected value>пластификатор</option>
                 <option value="customOption">[ввести значение]</option>
                 <option value="0">0гр на 1000гр гипса</option>
