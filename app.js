@@ -27,16 +27,10 @@ function clear_value(value) {
 function toggleField(hideObj, showObj){
   hideObj.disabled=true;
   hideObj.style.display='none';
-  showObj.disabled=false;
-  showObj.style.display='inline';
-  showObj.focus();
+	showObj.focus();
+	showObj.disabled=false;
+	showObj.style.display='inline';
 }
-
-
-function isNumber(value) {
-  return typeof value === 'number' && isFinite(value);
-}
-
 
 function check_item(item){
 	if (!isFinite(item.value) || Number(item.value) <= 0 )  {
