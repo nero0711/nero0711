@@ -4,25 +4,11 @@ tg.expand();
 
 let result = "";
 
-let x_gypsum = document.getElementById("x_gypsum");
-let x_water = document.getElementById("x_water");
-let x_plasticizer = document.getElementById("x_plasticizer");
-let x_pigment = document.getElementById("x_pigment");
-// let x_all = document.getElementById("x_all");
 let calc = document.getElementById("calc");
 
 let input_gypsum = document.getElementById('gypsum1')
-let input_water = document.getElementById('water1')
-let input_plasticizer = document.getElementById('plasticizer1')
-let input_pigment = document.getElementById('pigment1')
-
 
 input_gypsum.selectedIndex = 3;
-
-function clear_value(value) {
-	let item = document.getElementById(value);
-	item.value = '';
-};
 
 function toggleField(hideObj, showObj){
   hideObj.disabled=true;
