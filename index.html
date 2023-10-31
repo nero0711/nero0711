@@ -46,7 +46,7 @@
                 <option value="350">350гр на 1000гр гипса</option>
                 <option value="450">450гр на 1000гр гипса</option>
                 <option value="500">500гр на 1000гр гипса</option>
-            </select><input class="input_list" name="water" type="number"  id="water2" style="display:none;" disabled > <!--onblur="if(this.value==''){toggleField(this,this.previousSibling);}"-->
+            </select><input class="input_list" name="water" type="number"  id="water2" style="display:none;" onfocus="this.focus()" disabled > <!--onblur="if(this.value==''){toggleField(this,this.previousSibling);}"-->
         </div>
         <div class="indentation_one">
             <select class="input_list" name="plasticizer" id="plasticizer1" onchange="if(this.options[this.selectedIndex].value=='customOption'){this.selectedIndex='0'; toggleField(this,this.nextSibling); }">
