@@ -16,7 +16,8 @@ function toggleField(hideObj, showObj){
   showObj.disabled=false;
   showObj.style.display='inline';
   showObj.focus();
-  alert(document.activeElement.blur())
+    showObj.focus();
+  // alert(document.activeElement.blur())
 }
 
 function check_item(item){
